@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+    --background: 0.13 0.015 230;
+    --foreground: 0.91 0.015 215;
+    --card: 0.18 0.018 225;
+    --card-foreground: 0.91 0.015 215;
+    --popover: 0.21 0.02 225;
+    --popover-foreground: 0.91 0.015 215;
+    --primary: 0.79 0.112 186;
+    --primary-foreground: 0.13 0.015 230;
+    --secondary: 0.21 0.02 225;
+    --secondary-foreground: 0.91 0.015 215;
+    --muted: 0.18 0.018 225;
+    --muted-foreground: 0.67 0.018 215;
+    --accent: 0.79 0.112 186;
+    --accent-foreground: 0.13 0.015 230;
+    --destructive: 0.63 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.28 0.022 225;
+    --input: 0.28 0.022 225;
+    --ring: 0.79 0.112 186;
+    --chart-1: 0.61 0.19 250;
+    --chart-2: 0.79 0.112 186;
+    --chart-3: 0.72 0.16 142;
+    --chart-4: 0.73 0.17 60;
+    --chart-5: 0.63 0.22 25;
+    --sidebar: 0.15 0.016 228;
+    --sidebar-foreground: 0.91 0.015 215;
+    --sidebar-primary: 0.79 0.112 186;
+    --sidebar-primary-foreground: 0.13 0.015 230;
+    --sidebar-accent: 0.21 0.02 225;
+    --sidebar-accent-foreground: 0.91 0.015 215;
+    --sidebar-border: 0.28 0.022 225;
+    --sidebar-ring: 0.79 0.112 186;
+    /* Custom semantic tokens */
+    --teal: 0.79 0.112 186;
+    --cyan: 0.78 0.12 210;
+    --success: 0.72 0.16 142;
+    --warning: 0.73 0.17 60;
+    --danger: 0.63 0.22 25;
+    --blue: 0.61 0.19 250;
+    --blue-light: 0.7 0.16 250;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0.025 225);
+  }
+}
+
+@layer utilities {
+  .text-teal {
+    color: oklch(var(--teal));
+  }
+  .text-cyan {
+    color: oklch(var(--cyan));
+  }
+  .text-success {
+    color: oklch(var(--success));
+  }
+  .text-warning {
+    color: oklch(var(--warning));
+  }
+  .text-danger {
+    color: oklch(var(--danger));
+  }
+  .text-blue {
+    color: oklch(var(--blue));
+  }
+  .text-blue-light {
+    color: oklch(var(--blue-light));
+  }
+
+  .bg-teal {
+    background-color: oklch(var(--teal));
+  }
+  .bg-teal-dim {
+    background-color: oklch(var(--teal) / 0.15);
+  }
+  .bg-success-dim {
+    background-color: oklch(var(--success) / 0.15);
+  }
+  .bg-warning-dim {
+    background-color: oklch(var(--warning) / 0.15);
+  }
+  .bg-danger-dim {
+    background-color: oklch(var(--danger) / 0.15);
+  }
+  .bg-blue-dim {
+    background-color: oklch(var(--blue) / 0.15);
+  }
+
+  .border-teal {
+    border-color: oklch(var(--teal));
+  }
+  .border-teal-dim {
+    border-color: oklch(var(--teal) / 0.3);
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 12px oklch(var(--teal) / 0.35);
+  }
+  .glow-danger {
+    box-shadow: 0 0 10px oklch(var(--danger) / 0.3);
+  }
+
+  .card-surface {
+    background: linear-gradient(
+      160deg,
+      oklch(0.19 0.019 225),
+      oklch(0.17 0.017 228)
+    );
+    border: 1px solid oklch(var(--border));
+  }
+
+  .sidebar-active-line {
+    border-left: 2px solid oklch(var(--teal));
+    background-color: oklch(var(--teal) / 0.1);
+  }
+}
